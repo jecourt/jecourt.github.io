@@ -179,21 +179,11 @@
               return data;
           })
 
-        var myString = html;
-
-        // console.log(btoa('example'))
-        // var encrypted = CryptoJS.AES.encrypt(myString, "example");
-        var encrypted = html
-
-        var decrypted = CryptoJS.AES.decrypt(encrypted, Password);
-        // console.log(encrypted);
-        // console.log(decrypted);
+        var decrypted = CryptoJS.AES.decrypt(html, Password);
 
         try {
 
           decrypted.toString(CryptoJS.enc.Utf8)
-
-          //history.replaceState(null, null, ' ');
 
           $('#iPassword').removeClass('is-invalid');
           $('#button').removeClass('btn-danger');
